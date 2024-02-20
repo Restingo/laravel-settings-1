@@ -116,6 +116,18 @@ class Settings
     }
 
     /**
+     * Set the model owner of the settings entry or use default setting without model.
+     */
+    public function forOrDefault(?Model $model): Settings
+    {
+        if(! is_null($model) {
+           $this->filter->setModel($model);
+        }
+           
+        return $this;
+    }
+
+    /**
      * Set the group name of the settings entry.
      */
     public function group(string $name): Settings
